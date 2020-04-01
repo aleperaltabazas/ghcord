@@ -1,0 +1,72 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7d81c8aa83006745df2fc5f48b338c47183bda16714cfb93b504c150cd5989f4
+
+name:           ghcord
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/ghcord#readme>
+homepage:       https://github.com/githubuser/ghcord#readme
+bug-reports:    https://github.com/githubuser/ghcord/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/ghcord
+
+library
+  exposed-modules:
+      Eval
+      Lib
+  other-modules:
+      Paths_ghcord
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , hint
+    , string-interpolate
+  default-language: Haskell2010
+
+executable ghcord-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ghcord
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , ghcord
+    , hint
+    , string-interpolate
+  default-language: Haskell2010
+
+test-suite ghcord-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ghcord
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , ghcord
+    , hint
+    , string-interpolate
+  default-language: Haskell2010
